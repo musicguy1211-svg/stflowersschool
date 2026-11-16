@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>St Flowers School 🌸</title>
+<style>
+body{margin:0;font-family:Arial;background:#fff5fa;color:#493344}
+header{text-align:center;background:#f5d5e6;padding:20px}
+h1{color:#a94d7b}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:12px}
+button{background:#bd6799;color:white;border:0;border-radius:10px;padding:12px;cursor:pointer;margin:4px}
+section{max-width:650px;margin:18px auto;padding:20px;background:white;border-radius:16px;box-shadow:0 2px 10px #ead5e0}
+input,select{padding:12px;margin:6px 0;width:90%;border:1px solid #dfb7cd;border-radius:8px}
+.hidden{display:none}
+.lesson{padding:10px;border-bottom:1px solid #eee}
+footer{text-align:center;padding:25px;color:#956b83}
+</style>
+</head>
+<body>
+<header>
+<h1>🌸 St Flowers School 🌸</h1>
+<p>A happy place to learn, play and grow!</p>
+</header>
+
+<section style="text-align:center">
+<img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=900"
+alt="Children playing together" style="width:100%;border-radius:14px">
+<h2>Welcome to our school!</h2>
+<p>Learning together, growing together 🌷</p>
+</section>
+
+<nav>
+<button onclick="show('staff')">Staff Login</button>
+<button onclick="show('pupil')">Pupil Login</button>
+<button onclick="show('parent')">Parent Login</button>
+</nav>
+
+<section id="login" class="hidden">
+<h2 id="loginTitle">Login</h2>
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Continue</button>
+<p id="message"></p>
+</section>
+
+<section id="dashboard" class="hidden">
+<h2 id="welcome"></h2>
+<div id="menu"></div>
+<div id="content"></div>
+<button onclick="home()">Sign out</button>
+</section>
+
+<footer>🌸 St Flowers School 🌸</footer>
+
+<script>
+let role="";
+let homework=[];
+let lessons=[
+["09:00","English"],["10:00","Break"],
+["10:20","Maths"],["11:20","Art"],
+["12:00","Lunch"],["13:00","Science"],
+["14:00","Reading"]
+];
+let reminders=[
+"Bring your reading book 📖",
+"Bring your water bottle 💧",
+"Remember your pencil case ✏️",
+"Bring your PE kit 👟"
+];
+
+function show(r){
+role=r;
+document.getElementById("login").classList.remove("hidden");
+document.getElementById("loginTitle").innerText=r+" Login";
+document.getElementById("message").innerText="";
+}
+
+function login(){
+let u=document.getElementById("username").value.trim();
+let p=document.getElementById("password").value;
+if(!u||!p){document.getElementById("message").innerText="Please fill in both boxes.";return;}
+document.getElementById("login").classList.add("hidden");
+document.getElementById("dashboard").classList.remove("hidden");
+document.getElementById("welcome").innerText="Welcome to St Flowers!";
+let menu=document.getElementById("menu");
+menu.innerHTML="";
+if(role==="staff"){
+menu.innerHTML='<button onclick="timetable()">Timetable</button><button onclick="reminderPage()">Reminders</button><button onclick="addHomework()">Set Homework</button>';
+}else if(role==="parent"){
+menu.innerHTML='<button onclick="timetable()">Timetable</button><button onclick="reminderPage()">Reminders</button><button onclick="viewHomework()">Private Homework</button>';
+}else{
+menu.innerHTML='<button onclick="timetable()">Weekly Timetable</button><button onclick="reminderPage()">Weekly Reminders</button><button onclick="maths()">Maths Games</button>';
+}
+}
+
+function home(){
+document.getElementById("dashboard").classList.add("hidden");
+document.getElementById("content").innerHTML="";
+document.getElementById("username").value="";
+document.getElementById("password").value="";
+}
+
+function timetable(){
+let html="<h2>📚 Weekly Timetable</h2>";
+["Monday","Tuesday","Wednesday","Thursday","Friday"].forEach(d=>{
+html+="<h3>"+d+"</h3>";
+lessons.forEach(l=>html+='<div class="lesson">'+l[0]+" — "+l[1]+"</div>");
+});
+document.getElementById("content").innerHTML=html;
+}
+
+function reminderPage(){
+document.getElementById("content").innerHTML="<h2>🌈 Weekly Reminders</h2>"+reminders.map(x=>"<p>🌸 "+x+"</p>").join("");
+}
+
+function addHomework(){
+if(role!=="staff")return;
+document.getElementById("content").innerHTML=`
+<h2>📝 Set Homework</h2>
+<input id="subject" placeholder="Subject">
+<input id="task" placeholder="Homework instructions">
+<input id="due" placeholder="Due date">
+<button onclick="saveHomework()">Save Homework</button>`;
+}
+
+function saveHomework(){
+let s=document.getElementById("subject").value;
+let t=document.getElementById("task").value;
+let d=document.getElementById("due").value;
+if(!s||!t||!d){alert("Please complete all fields");return;}
+homework.push({s,t,d,score:"Not marked"});
+alert("Homework added!");
+}
+
+function viewHomework(){
+if(role!=="parent")return;
+document.getElementById("content").innerHTML="<h2>🔒 Private Homework</h2>"+
+(homework.length?homework.map(h=>`<div class="lesson"><b>${h.s}</b><p>${h.t}</p><p>Due: ${h.d}</p><b>${h.score}</b></div>`).join(""):"No homework yet.");
+}
+
+function maths(){
+document.getElementById("content").innerHTML=`
+<h2>🔢 Maths Games</h2>
+<p>Choose your activity!</p>
+<button onclick="startMath('times')">✖️ Times Tables</button>
+<button onclick="startMath('add')">➕ Addition</button>
+<button onclick="startMath('subtract')">➖ Subtraction</button>
+<button onclick="startMath('divide')">➗ Division</button>
+<div id="game"></div>`;
+}
+
+function startMath(type){
+let a=Math.floor(Math.random()*10)+1;
+let b=Math.floor(Math.random()*10)+1;
+let answer,sign;
+if(type==="times"){answer=a*b;sign="×";}
+if(type==="add"){answer=a+b;sign="+";}
+if(type==="subtract"){if(b>a)[a,b]=[b,a];answer=a-b;sign="−";}
+if(type==="divide"){answer=a;b=Math.floor(Math.random()*10)+1;a=answer*b;sign="÷";}
+document.getElementById("game").innerHTML=`
+<h3>${a} ${sign} ${b} = ?</h3>
+<input id="answer" type="number" placeholder="Your answer">
+<button onclick="check(${answer})">Check answer</button>
+<p id="feedback"></p>`;
+}
+function check(answer){
+let guess=Number(document.getElementById("answer").value);
+document.getElementById("feedback").innerText=
+guess===answer?"🌟 Brilliant! Correct!":"Good try! The answer is "+answer+".";
+}
+</script>
+</body>
+</html>
