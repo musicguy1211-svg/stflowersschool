@@ -1,236 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>St Flowers School 🌸</title>
-
-<style>
-* {
-  box-sizing: border-box;
+margin: 15px 0;
+  box-shadow: 0 3px 12px #e8c6d6;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff5fa;
-  color: #493344;
-}
-
-header {
-  background: linear-gradient(135deg, #ff8fc7, #ffb6d9);
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 36px;
-}
-
-header p {
-  margin: 8px 0 0;
-  font-size: 17px;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 15px;
-  background: white;
-}
-
-button, select, input {
-  font: inherit;
-}
-
-nav button, .main-button {
-  background: #ed65a7;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  opacity: 0.85;
-}
-
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* HOMEPAGE SLIDESHOW */
-
-.slideshow {
+.hero {
   position: relative;
-  width: 100%;
-  height: 390px;
   overflow: hidden;
-  border-radius: 20px;
-  margin: 15px 0 25px;
-  background: #ffd6e9;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  border-radius: 18px;
+  height: 350px;
+  background: #f4d5e4;
 }
 
-.slide {
-  position: absolute;
+.hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.8s;
 }
 
-.slide.active {
-  opacity: 1;
-}
-
-.slide-caption {
+.hero-caption {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  padding: 30px 15px;
+  left: 0;
+  right: 0;
+  padding: 18px;
   color: white;
-  text-align: center;
-  font-size: 27px;
+  font-size: 22px;
   font-weight: bold;
-  background: linear-gradient(transparent, rgba(0,0,0,0.65));
-  z-index: 2;
-}
-
-/* DASHBOARD */
-
-.welcome {
   text-align: center;
-  padding: 15px;
+  background: linear-gradient(transparent, #0009);
 }
 
-.welcome h2 {
-  color: #d74791;
-  font-size: 28px;
+button, input, select, textarea {
+  font: inherit;
 }
 
-.dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px;
-  margin: 25px 0;
-}
-
-.tile {
-  background: white;
-  border-radius: 18px;
-  padding: 25px 15px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-  border-bottom: 5px solid #ff9dcc;
-}
-
-.tile h3 {
-  color: #d74791;
-  margin-top: 5px;
-}
-
-.tile p {
-  color: #76576b;
-}
-
-.tile button {
-  background: #f47bb6;
+.action {
+  background: #d979a8;
   color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 18px;
-  cursor: pointer;
-}
-
-section.panel {
-  background: white;
-  border-radius: 18px;
-  padding: 22px;
-  margin: 20px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-section h2 {
-  color: #d74791;
-}
-
-.hidden {
-  display: none;
-}
-
-select, input {
-  padding: 11px;
-  border: 1px solid #e8a4c7;
+  border: 0;
   border-radius: 9px;
-  margin: 5px;
+  padding: 11px 17px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.action:hover {
+  background: #b95789;
+}
+
+input, select, textarea {
+  padding: 11px;
+  border: 1px solid #d9a9c0;
+  border-radius: 8px;
+  margin: 5px 0 12px;
   max-width: 100%;
 }
 
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
 table {
-  width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  width: 100%;
   background: white;
+  margin-top: 15px;
 }
 
 th, td {
-  padding: 12px;
-  border: 1px solid #f2c7dc;
-  text-align: left;
+  border: 1px solid #edc6d9;
+  padding: 12px 8px;
+  text-align: center;
 }
 
 th {
-  background: #ffe0ef;
-  color: #8d3764;
+  background: #f6c5dc;
 }
 
-.action-button {
-  background: #ed65a7;
-  color: white;
-  border: none;
-  border-radius: 9px;
-  padding: 10px 15px;
-  margin: 5px;
-  cursor: pointer;
+.break-row {
+  background: #fff0c9;
+  font-weight: bold;
+}
+
+.lunch-row {
+  background: #e8f4dc;
+  font-weight: bold;
+}
+
+.activity-row {
+  background: #f3e8ff;
+}
+
+.subject {
+  font-weight: bold;
+  color: #a44877;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 15px;
+}
+
+.small-card {
+  background: #fff0f7;
+  border-radius: 13px;
+  padding: 16px;
+  text-align: center;
 }
 
 footer {
+  background: #f6c5dc;
   text-align: center;
-  padding: 25px;
-  background: #ffb6d9;
-  color: #66334f;
+  padding: 20px;
   margin-top: 35px;
 }
 
-@media(max-width: 600px) {
-  header h1 {
-    font-size: 27px;
+#loginMessage {
+  color: #b00040;
+  font-weight: bold;
+}
+
+.homework-item {
+  padding: 12px;
+  border-bottom: 1px solid #f0d5e2;
+}
+
+@media(max-width: 650px) {
+  main {
+    padding: 12px;
   }
 
-  .slideshow {
-    height: 240px;
-  }
-
-  .slide-caption {
-    font-size: 19px;
+  .hero {
+    height: 230px;
   }
 
   table {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   th, td {
-    padding: 7px;
+    padding: 7px 4px;
   }
 }
 </style>
@@ -240,609 +152,614 @@ footer {
 
 <header>
   <h1>🌸 St Flowers School 🌸</h1>
-  <p>Learning, Playing and Growing Together</p>
+  <p>Growing Together, Learning Together</p>
 </header>
 
 <nav>
-  <button onclick="showHome()">🏠 Home</button>
-  <button onclick="showLogin()">🔐 Login</button>
-  <button onclick="showSection('timetable')">📚 Timetable</button>
-  <button onclick="showSection('homework')">✏️ Homework</button>
-  <button onclick="showSection('reminders')">🔔 Reminders</button>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('about')">About Us</button>
+  <button onclick="showPage('login')">Login</button>
+  <button onclick="showPage('dashboard')">Dashboard</button>
+  <button onclick="showPage('timetable')">Timetable</button>
+  <button onclick="showPage('homework')">Homework</button>
+  <button onclick="showPage('reminders')">Reminders</button>
+  <button onclick="showPage('games')">Maths Games</button>
+  <button onclick="showPage('admin')">Admin</button>
 </nav>
 
 <main>
 
-<!-- HOMEPAGE -->
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="card">
+    <h2>Welcome to St Flowers School! 🌸</h2>
+    <p>Welcome to our happy school. We learn, play, create and grow together!</p>
 
-<div id="home">
-
-  <div class="slideshow">
-    <img class="slide active"
+    <div class="hero">
+      <img id="slideshowImage"
       src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1400"
-      alt="Children enjoying playtime">
-
-    <img class="slide"
-      src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1400"
-      alt="Children playing together">
-
-    <img class="slide"
-      src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1400"
-      alt="Children enjoying the outdoors">
-
-    <div class="slide-caption">
-      🌸 Learning, Playing and Growing Together 🌸
+      alt="Children enjoying school">
+      <div class="hero-caption" id="slideCaption">
+        Learning and having fun together!
+      </div>
     </div>
   </div>
 
-  <div class="welcome">
-    <h2>Welcome to St Flowers School!</h2>
-    <p>A happy place to learn, make friends and grow.</p>
-    <p>🌈 Every child matters. Every day is an adventure! 🌈</p>
-    <button class="main-button" onclick="showLogin()">Enter School Portal</button>
-  </div>
-
-  <div class="dashboard">
-    <div class="tile">
+  <div class="grid">
+    <div class="small-card">
       <h3>📚 Learning</h3>
-      <p>Discover, explore and enjoy learning.</p>
+      <p>We love discovering new things.</p>
     </div>
-
-    <div class="tile">
+    <div class="small-card">
       <h3>⚽ Playing</h3>
-      <p>Making friends and having fun together.</p>
+      <p>We enjoy playing with our friends.</p>
     </div>
-
-    <div class="tile">
-      <h3>🎨 Creativity</h3>
-      <p>Drawing, creating and using our imagination.</p>
-    </div>
-
-    <div class="tile">
-      <h3>🌟 Achievement</h3>
-      <p>Celebrating every little success.</p>
+    <div class="small-card">
+      <h3>🎨 Creating</h3>
+      <p>We make wonderful things together.</p>
     </div>
   </div>
-</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <div class="card">
+    <h2>About St Flowers School</h2>
+    <p>St Flowers School is a friendly school where everybody is welcome.</p>
+    <p>We have classes from Reception to Year 6.</p>
+    <h3>Our Classes</h3>
+    <ul>
+      <li>Reception – Mrs Rose's Class</li>
+      <li>Year 1 – Miss Green's Class</li>
+      <li>Year 2 – Mr Ward's Class</li>
+      <li>Year 3 – Mrs Patel's Class</li>
+      <li>Year 4 – Mr Brown's Class</li>
+      <li>Year 5 – Miss Jones's Class</li>
+      <li>Year 6 – Mrs Smith's Class</li>
+    </ul>
+  </div>
+</section>
 
 <!-- LOGIN -->
+<section id="login" class="page">
+  <div class="card">
+    <h2>School Login 🔐</h2>
 
-<div id="login" class="hidden">
-  <section class="panel">
-    <h2>🔐 School Portal Login</h2>
-    <p>Select your role to enter the demonstration dashboard.</p>
+    <label>Username</label>
+    <input id="username" placeholder="Enter username">
 
-    <label for="role">Your role:</label>
+    <label>Password</label>
+    <input id="password" type="password" placeholder="Enter password">
+
+    <label>Login as</label>
     <select id="role">
-      <option value="Admin">Admin</option>
-      <option value="Teacher">Teacher</option>
-      <option value="Parent">Parent</option>
       <option value="Student">Pupil</option>
+      <option value="Parent">Parent</option>
+      <option value="Teacher">Teacher</option>
+      <option value="Admin">Admin</option>
     </select>
 
-    <br>
-
-    <label for="classSelect">Class:</label>
-    <select id="classSelect"></select>
-
-    <br>
-
-    <input id="username" placeholder="Username">
-    <input id="password" type="password" placeholder="Password">
-
-    <br>
-
-    <button class="main-button" onclick="login()">Log In</button>
+    <button class="action" onclick="login()">Login</button>
     <p id="loginMessage"></p>
-    <p><small>This is a demonstration login, not a real secure school account.</small></p>
-  </section>
-</div>
+  </div>
+</section>
 
 <!-- DASHBOARD -->
+<section id="dashboard" class="page">
+  <div class="card">
+    <h2>School Dashboard 🌸</h2>
+    <p id="welcomeMessage">Welcome to St Flowers School!</p>
 
-<div id="dashboardPage" class="hidden">
+    <div class="grid">
+      <div class="small-card">
+        <h3>📅 Timetable</h3>
+        <p>See what lessons are happening today.</p>
+        <button class="action" onclick="showPage('timetable')">View timetable</button>
+      </div>
 
-  <div class="welcome">
-    <h2 id="dashboardTitle">Welcome!</h2>
-    <p id="dashboardDescription"></p>
-    <button class="action-button" onclick="logout()">Log Out</button>
+      <div class="small-card">
+        <h3>📖 Homework</h3>
+        <p>Check your homework.</p>
+        <button class="action" onclick="showPage('homework')">View homework</button>
+      </div>
+
+      <div class="small-card">
+        <h3>🔔 Reminders</h3>
+        <p>Remember important school events.</p>
+        <button class="action" onclick="showPage('reminders')">View reminders</button>
+      </div>
+
+      <div class="small-card">
+        <h3>🧮 Maths Games</h3>
+        <p>Practise your maths.</p>
+        <button class="action" onclick="showPage('games')">Play games</button>
+      </div>
+    </div>
+
+    <button class="action" onclick="logout()">Log out</button>
   </div>
-
-  <div class="dashboard">
-    <div class="tile">
-      <h3>📚 Timetable</h3>
-      <p>View your class timetable.</p>
-      <button onclick="showSection('timetable')">Open Timetable</button>
-    </div>
-
-    <div class="tile">
-      <h3>✏️ Homework</h3>
-      <p>See and manage homework.</p>
-      <button onclick="showSection('homework')">Open Homework</button>
-    </div>
-
-    <div class="tile">
-      <h3>🔔 Reminders</h3>
-      <p>Important school announcements.</p>
-      <button onclick="showSection('reminders')">Open Reminders</button>
-    </div>
-
-    <div class="tile" id="adminTile">
-      <h3>⚙️ School Administration</h3>
-      <p>Manage school information.</p>
-      <button onclick="showSection('admin')">Admin Area</button>
-    </div>
-
-    <div class="tile" id="gamesTile">
-      <h3>🎮 Maths Games</h3>
-      <p>Practise your maths skills.</p>
-      <button onclick="showSection('games')">Play Games</button>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- TIMETABLE -->
+<section id="timetable" class="page">
+  <div class="card">
+    <h2>📅 School Timetable</h2>
+    <p>Our school day starts at 9:00 am and finishes at 3:15 pm.</p>
 
-<section id="timetable" class="panel hidden">
-  <h2>📚 Class Timetable</h2>
-
-  <label for="timetableClass">Choose class:</label>
-  <select id="timetableClass" onchange="renderTimetable()"></select>
-
-  <p id="permissionMessage"></p>
-
-  <div style="overflow-x:auto">
-    <table>
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Lesson 1</th>
-          <th>Lesson 2</th>
-          <th>Lesson 3</th>
-        </tr>
-      </thead>
-      <tbody id="timetableBody"></tbody>
-    </table>
-  </div>
-
-  <div id="timetableEditor" class="hidden">
-    <h3>Edit Timetable</h3>
-    <p>Choose a day and lesson, then enter the new lesson.</p>
-
-    <select id="editDay">
-      <option>Monday</option>
-      <option>Tuesday</option>
-      <option>Wednesday</option>
-      <option>Thursday</option>
-      <option>Friday</option>
+    <label>Choose a class</label>
+    <select id="classChoice" onchange="renderTimetable()">
+      <option>Reception – Mrs Rose's Class</option>
+      <option>Year 1 – Miss Green's Class</option>
+      <option>Year 2 – Mr Ward's Class</option>
+      <option>Year 3 – Mrs Patel's Class</option>
+      <option>Year 4 – Mr Brown's Class</option>
+      <option>Year 5 – Miss Jones's Class</option>
+      <option>Year 6 – Mrs Smith's Class</option>
     </select>
 
-    <select id="editLesson">
-      <option value="0">Lesson 1</option>
-      <option value="1">Lesson 2</option>
-      <option value="2">Lesson 3</option>
-    </select>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+          </tr>
+        </thead>
+        <tbody id="timetableBody"></tbody>
+      </table>
+    </div>
 
-    <input id="newLesson" placeholder="New lesson">
+    <div id="timetableEditor" style="display:none">
+      <h3>Edit timetable (Admin and Teachers)</h3>
+      <p>Choose a day and lesson to change its subject.</p>
 
-    <button class="action-button" onclick="saveLesson()">Save Lesson</button>
+      <label>Day</label>
+      <select id="editDay">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+      </select>
+
+      <label>Lesson</label>
+      <select id="editLesson">
+        <option value="0">Lesson 1 – 9:00–9:45</option>
+        <option value="1">Lesson 2 – 9:45–10:30</option>
+        <option value="2">Lesson 3 – 10:45–11:30</option>
+        <option value="3">Lesson 4 – 12:30–1:15</option>
+        <option value="4">Lesson 5 – 1:15–2:15</option>
+      </select>
+
+      <label>New subject</label>
+      <input id="newSubject" placeholder="Enter lesson subject">
+
+      <button class="action" onclick="saveLesson()">Save lesson</button>
+    </div>
+
+    <p><strong>Home time: 3:15 pm 🌸</strong></p>
   </div>
 </section>
 
 <!-- HOMEWORK -->
+<section id="homework" class="page">
+  <div class="card">
+    <h2>📖 Homework</h2>
+    <p>Here is the school's homework list.</p>
 
-<section id="homework" class="panel hidden">
-  <h2>✏️ Homework</h2>
-  <div id="homeworkList"></div>
+    <div id="homeworkList"></div>
 
-  <div id="homeworkEditor" class="hidden">
-    <h3>Add Homework</h3>
-    <input id="homeworkInput" placeholder="Enter homework details">
-    <button class="action-button" onclick="addHomework()">Add Homework</button>
+    <div id="homeworkEditor" style="display:none">
+      <h3>Add homework</h3>
+      <label>Class</label>
+      <select id="homeworkClass">
+        <option>All classes</option>
+        <option>Reception</option>
+        <option>Year 1</option>
+        <option>Year 2</option>
+        <option>Year 3</option>
+        <option>Year 4</option>
+        <option>Year 5</option>
+        <option>Year 6</option>
+      </select>
+
+      <label>Homework details</label>
+      <textarea id="homeworkText" rows="3" placeholder="Write the homework here"></textarea>
+
+      <button class="action" onclick="addHomework()">Add homework</button>
+    </div>
   </div>
 </section>
 
 <!-- REMINDERS -->
+<section id="reminders" class="page">
+  <div class="card">
+    <h2>🔔 School Reminders</h2>
+    <ul id="reminderList">
+      <li>Remember to bring your reading book.</li>
+      <li>Bring your PE kit on PE days.</li>
+      <li>Be kind and helpful to everyone.</li>
+      <li>Remember your water bottle.</li>
+    </ul>
+  </div>
+</section>
 
-<section id="reminders" class="panel hidden">
-  <h2>🔔 School Reminders</h2>
-  <div id="reminderList"></div>
+<!-- GAMES -->
+<section id="games" class="page">
+  <div class="card">
+    <h2>🧮 Maths Challenge</h2>
+    <p>Answer the question below!</p>
 
-  <div id="reminderEditor" class="hidden">
-    <h3>Add Reminder</h3>
-    <input id="reminderInput" placeholder="Enter reminder">
-    <button class="action-button" onclick="addReminder()">Add Reminder</button>
+    <h3 id="mathQuestion">What is 5 + 3?</h3>
+
+    <input id="mathAnswer" type="number" placeholder="Your answer">
+    <button class="action" onclick="checkAnswer()">Check answer</button>
+    <button class="action" onclick="newQuestion()">New question</button>
+
+    <p id="mathMessage"></p>
+    <p>Score: <strong id="score">0</strong></p>
   </div>
 </section>
 
 <!-- ADMIN -->
+<section id="admin" class="page">
+  <div class="card">
+    <h2>⚙️ Admin Area</h2>
+    <p>School administration tools.</p>
 
-<section id="admin" class="panel hidden">
-  <h2>⚙️ Admin Control Centre</h2>
-  <p>Welcome to the school administration area.</p>
-
-  <div class="dashboard">
-    <div class="tile">
-      <h3>👩‍🏫 Teachers</h3>
-      <p>Manage teacher information.</p>
-    </div>
-
-    <div class="tile">
-      <h3>👧 Pupils</h3>
-      <p>Manage pupil information.</p>
-    </div>
-
-    <div class="tile">
-      <h3>👨‍👩‍👧 Parents</h3>
-      <p>Manage parent information.</p>
-    </div>
-
-    <div class="tile">
-      <h3>📊 Attendance and Grades</h3>
-      <p>School records and progress.</p>
+    <div id="adminContent">
+      <p>Please log in as Admin to use these tools.</p>
     </div>
   </div>
-</section>
-
-<!-- MATHS GAMES -->
-
-<section id="games" class="panel hidden">
-  <h2>🎮 Maths Game</h2>
-  <p>What is <strong id="question"></strong>?</p>
-  <input type="number" id="answer" placeholder="Your answer">
-  <button class="action-button" onclick="checkAnswer()">Check Answer</button>
-  <p id="gameResult"></p>
 </section>
 
 </main>
 
 <footer>
-  🌸 St Flowers School 🌸
-  <p>Learning, Playing and Growing Together</p>
+  <p>🌸 St Flowers School 🌸</p>
+  <p>Growing Together, Learning Together</p>
 </footer>
 
 <script>
+/* PAGE NAVIGATION */
 
-/* SLIDESHOW: CHANGES EVERY FIVE SECONDS */
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
 
-const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+  document.getElementById(pageId).classList.add('active');
+
+  if (pageId === 'timetable') renderTimetable();
+  if (pageId === 'homework') renderHomework();
+  if (pageId === 'admin') renderAdmin();
+}
+
+/* CHILDREN'S SLIDESHOW */
+
+const slides = [
+  {
+    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1400",
+    caption: "Learning and having fun together!"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1400",
+    caption: "Making wonderful memories at school!"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1400",
+    caption: "Growing, playing and learning!"
+  }
+];
+
+let slideIndex = 0;
 
 setInterval(() => {
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("active");
+  slideIndex = (slideIndex + 1) % slides.length;
+
+  const image = document.getElementById('slideshowImage');
+  const caption = document.getElementById('slideCaption');
+
+  image.style.opacity = 0;
+
+  setTimeout(() => {
+    image.src = slides[slideIndex].image;
+    caption.textContent = slides[slideIndex].caption;
+    image.style.opacity = 1;
+  }, 400);
 }, 5000);
 
+/* LOGIN */
 
-/* SCHOOL CLASSES */
+let currentRole = null;
+let currentUser = "";
 
-const classes = [
-  "Year R – Mrs Rose's Class",
+function login() {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+  const role = document.getElementById('role').value;
+  const message = document.getElementById('loginMessage');
+
+  if (!username || !password) {
+    message.textContent = "Please enter your username and password.";
+    return;
+  }
+
+  currentRole = role;
+  currentUser = username;
+
+  document.getElementById('welcomeMessage').textContent =
+    "Welcome, " + username + "! You are logged in as " + role + ".";
+
+  message.textContent = "Demo login successful!";
+
+  showPage('dashboard');
+  updatePermissions();
+}
+
+function logout() {
+  currentRole = null;
+  currentUser = "";
+  updatePermissions();
+  showPage('home');
+}
+
+function updatePermissions() {
+  const editor = document.getElementById('timetableEditor');
+  const homeworkEditor = document.getElementById('homeworkEditor');
+
+  editor.style.display =
+    (currentRole === 'Admin' || currentRole === 'Teacher') ? 'block' : 'none';
+
+  homeworkEditor.style.display =
+    (currentRole === 'Admin' || currentRole === 'Teacher') ? 'block' : 'none';
+}
+
+/* TIMETABLE DATA */
+
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+const times = [
+  "9:00–9:45",
+  "9:45–10:30",
+  "10:45–11:30",
+  "12:30–1:15",
+  "1:15–2:15"
+];
+
+const defaultLessons = [
+  ["Maths", "English", "Science", "Art", "PE"],
+  ["English", "Maths", "Geography", "Music", "Computing"],
+  ["Maths", "Reading", "Science", "History", "PE"],
+  ["English", "Maths", "History", "Art", "Science"],
+  ["Maths", "English", "Geography", "Music", "Games"]
+];
+
+let timetableData = {};
+
+const classNames = [
+  "Reception – Mrs Rose's Class",
   "Year 1 – Miss Green's Class",
-  "Year 2 – Mr Wards Class",
+  "Year 2 – Mr Ward's Class",
   "Year 3 – Mrs Patel's Class",
   "Year 4 – Mr Brown's Class",
   "Year 5 – Miss Jones's Class",
   "Year 6 – Mrs Smith's Class"
 ];
 
-let currentRole = "";
-let currentClass = "";
-let currentUser = "";
-
-const roleSelect = document.getElementById("role");
-const classSelect = document.getElementById("classSelect");
-const timetableClass = document.getElementById("timetableClass");
-
-classes.forEach((className, index) => {
-  classSelect.add(new Option(className, index));
-  timetableClass.add(new Option(className, index));
-});
-
-
-/* STARTER TIMETABLE */
-
-function createStarterTimetable() {
-  const timetable = {};
-
-  classes.forEach((className, index) => {
-    timetable[index] = {
-      Monday: ["English", "Maths", "Art"],
-      Tuesday: ["Reading", "Science", "PE"],
-      Wednesday: ["Maths", "History", "Music"],
-      Thursday: ["English", "Geography", "Art"],
-      Friday: ["Maths", "Reading", "Games"]
-    };
-  });
-
-  return timetable;
-}
-
-let timetable = JSON.parse(localStorage.getItem("schoolTimetable")) ||
-  createStarterTimetable();
-
-let homework = JSON.parse(localStorage.getItem("schoolHomework")) || [
-  "Read your reading book.",
-  "Practise your number bonds."
-];
-
-let reminders = JSON.parse(localStorage.getItem("schoolReminders")) || [
-  "Remember to bring your reading book.",
-  "PE kits needed on Tuesday."
-];
-
-function saveData() {
-  localStorage.setItem("schoolTimetable", JSON.stringify(timetable));
-  localStorage.setItem("schoolHomework", JSON.stringify(homework));
-  localStorage.setItem("schoolReminders", JSON.stringify(reminders));
-}
-
-
-/* PAGE NAVIGATION */
-
-function hideAll() {
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("login").classList.add("hidden");
-  document.getElementById("dashboardPage").classList.add("hidden");
-
-  ["timetable", "homework", "reminders", "admin", "games"]
-    .forEach(id => document.getElementById(id).classList.add("hidden"));
-}
-
-function showHome() {
-  hideAll();
-  document.getElementById("home").classList.remove("hidden");
-}
-
-function showLogin() {
-  hideAll();
-  document.getElementById("login").classList.remove("hidden");
-}
-
-function showSection(section) {
-  hideAll();
-
-  const allowed = ["timetable", "homework", "reminders", "admin", "games"];
-
-  if (!allowed.includes(section)) return;
-
-  if (section === "admin" && currentRole !== "Admin") {
-    alert("Admin access only.");
-    document.getElementById("dashboardPage").classList.remove("hidden");
-    return;
-  }
-
-  if (section === "games" && currentRole !== "Student") {
-    alert("This area is for pupils.");
-    document.getElementById("dashboardPage").classList.remove("hidden");
-    return;
-  }
-
-  document.getElementById(section).classList.remove("hidden");
-
-  if (section === "timetable") renderTimetable();
-  if (section === "homework") renderHomework();
-  if (section === "reminders") renderReminders();
-}
-
-
-/* DEMONSTRATION LOGIN */
-
-function login() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  if (!username || !password) {
-    document.getElementById("loginMessage").textContent =
-      "Please enter a username and password.";
-    return;
-  }
-
-  currentRole = roleSelect.value;
-  currentUser = username;
-
-  // Demonstration teacher is assigned to Year 2 only.
-  currentClass = currentRole === "Teacher" ? 2 : Number(classSelect.value);
-
-  document.getElementById("dashboardTitle").textContent =
-    "Welcome, " + currentUser + "!";
-
-  document.getElementById("dashboardDescription").textContent =
-    currentRole + " dashboard – " + classes[currentClass];
-
-  document.getElementById("adminTile").classList.toggle(
-    "hidden", currentRole !== "Admin"
-  );
-
-  document.getElementById("gamesTile").classList.toggle(
-    "hidden", currentRole !== "Student"
-  );
-
-  timetableClass.value = currentClass;
-
-  hideAll();
-  document.getElementById("dashboardPage").classList.remove("hidden");
-
-  renderTimetable();
-}
-
-function logout() {
-  currentRole = "";
-  currentUser = "";
-  currentClass = "";
-  showHome();
-}
-
-
-/* TIMETABLE */
-
-function renderTimetable() {
-  const selectedClass = Number(timetableClass.value);
-
-  const isAllowedToEdit =
-    currentRole === "Admin" ||
-    (currentRole === "Teacher" && selectedClass === currentClass);
-
-  const editor = document.getElementById("timetableEditor");
-
-  editor.classList.toggle("hidden", !isAllowedToEdit);
-
-  document.getElementById("permissionMessage").textContent =
-    isAllowedToEdit
-      ? "You can edit this class timetable."
-      : "View only – you cannot change this timetable.";
-
-  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-
-  const body = document.getElementById("timetableBody");
-  body.innerHTML = "";
+classNames.forEach(className => {
+  timetableData[className] = {};
 
   days.forEach(day => {
-    const lessons = timetable[selectedClass][day];
-
-    const row = document.createElement("tr");
-
-    const dayCell = document.createElement("td");
-    dayCell.textContent = day;
-    row.appendChild(dayCell);
-
-    lessons.forEach(lesson => {
-      const cell = document.createElement("td");
-      cell.textContent = lesson;
-      row.appendChild(cell);
-    });
-
-    body.appendChild(row);
+    timetableData[className][day] = [...defaultLessons[days.indexOf(day)]];
   });
+});
+
+function renderTimetable() {
+  const selectedClass = document.getElementById('classChoice').value;
+  const body = document.getElementById('timetableBody');
+
+  let html = "";
+
+  const rows = [
+    {time: "9:00–9:45", type: "lesson", index: 0},
+    {time: "9:45–10:30", type: "lesson", index: 1},
+    {time: "10:30–10:45", type: "break"},
+    {time: "10:45–11:30", type: "lesson", index: 2},
+    {time: "11:30–12:30", type: "lunch"},
+    {time: "12:30–1:15", type: "lesson", index: 3},
+    {time: "1:15–2:15", type: "lesson", index: 4},
+    {time: "2:15–3:15", type: "activities"}
+  ];
+
+  rows.forEach(row => {
+    if (row.type === "break") {
+      html += `<tr class="break-row">
+        <td>${row.time}</td>
+        <td colspan="5">☀️ Morning Break</td>
+      </tr>`;
+    } else if (row.type === "lunch") {
+      html += `<tr class="lunch-row">
+        <td>${row.time}</td>
+        <td colspan="5">🍎 Lunch Time</td>
+      </tr>`;
+    } else if (row.type === "activities") {
+      html += `<tr class="activity-row">
+        <td>${row.time}</td>
+        <td colspan="5">🎨 Afternoon Activities</td>
+      </tr>`;
+    } else {
+      html += `<tr><td>${row.time}</td>`;
+
+      days.forEach(day => {
+        const subject = timetableData[selectedClass][day][row.index];
+        html += `<td class="subject">${escapeHTML(subject)}</td>`;
+      });
+
+      html += `</tr>`;
+    }
+  });
+
+  html += `<tr class="activity-row">
+    <td>3:15 pm</td>
+    <td colspan="5">🏡 Home Time!</td>
+  </tr>`;
+
+  body.innerHTML = html;
 }
 
 function saveLesson() {
-  const selectedClass = Number(timetableClass.value);
-
-  if (
-    currentRole !== "Admin" &&
-    !(currentRole === "Teacher" && selectedClass === currentClass)
-  ) {
-    alert("You do not have permission to edit this class.");
+  if (currentRole !== 'Admin' && currentRole !== 'Teacher') {
+    alert("You do not have permission to edit the timetable.");
     return;
   }
 
-  const day = document.getElementById("editDay").value;
-  const lesson = Number(document.getElementById("editLesson").value);
-  const newLesson = document.getElementById("newLesson").value.trim();
+  const selectedClass = document.getElementById('classChoice').value;
+  const day = document.getElementById('editDay').value;
+  const lesson = Number(document.getElementById('editLesson').value);
+  const subject = document.getElementById('newSubject').value.trim();
 
-  if (!newLesson) {
-    alert("Please enter a lesson.");
+  if (!subject) {
+    alert("Please enter a lesson subject.");
     return;
   }
 
-  timetable[selectedClass][day][lesson] = newLesson;
+  timetableData[selectedClass][day][lesson] = subject;
 
-  saveData();
+  document.getElementById('newSubject').value = "";
   renderTimetable();
 
-  document.getElementById("newLesson").value = "";
-  alert("Lesson updated in this demonstration.");
+  alert("Lesson updated!");
 }
-
 
 /* HOMEWORK */
 
+let homework = [
+  {className: "All classes", text: "Read your reading book this week."},
+  {className: "Year 2", text: "Practise your 2, 5 and 10 times tables."},
+  {className: "Year 4", text: "Write a short story about an adventure."}
+];
+
 function renderHomework() {
-  const list = document.getElementById("homeworkList");
+  const list = document.getElementById('homeworkList');
+
   list.innerHTML = "";
 
   homework.forEach(item => {
-    const p = document.createElement("p");
-    p.textContent = "📘 " + item;
-    list.appendChild(p);
-  });
+    const div = document.createElement('div');
+    div.className = "homework-item";
 
-  document.getElementById("homeworkEditor").classList.toggle(
-    "hidden",
-    !["Admin", "Teacher"].includes(currentRole)
-  );
+    const strong = document.createElement('strong');
+    strong.textContent = item.className + ": ";
+
+    div.appendChild(strong);
+    div.appendChild(document.createTextNode(item.text));
+    list.appendChild(div);
+  });
 }
 
 function addHomework() {
-  if (!["Admin", "Teacher"].includes(currentRole)) return;
+  if (currentRole !== 'Admin' && currentRole !== 'Teacher') {
+    alert("Only staff can add homework.");
+    return;
+  }
 
-  const input = document.getElementById("homeworkInput");
-  const value = input.value.trim();
+  const className = document.getElementById('homeworkClass').value;
+  const text = document.getElementById('homeworkText').value.trim();
 
-  if (!value) return;
+  if (!text) {
+    alert("Please enter the homework.");
+    return;
+  }
 
-  homework.push(value);
-  saveData();
-  input.value = "";
+  homework.push({className, text});
+
+  document.getElementById('homeworkText').value = "";
   renderHomework();
+
+  alert("Homework added!");
 }
 
+/* MATHS GAME */
 
-/* REMINDERS */
-
-function renderReminders() {
-  const list = document.getElementById("reminderList");
-  list.innerHTML = "";
-
-  reminders.forEach(item => {
-    const p = document.createElement("p");
-    p.textContent = "🔔 " + item;
-    list.appendChild(p);
-  });
-
-  document.getElementById("reminderEditor").classList.toggle(
-    "hidden",
-    !["Admin", "Teacher"].includes(currentRole)
-  );
-}
-
-function addReminder() {
-  if (!["Admin", "Teacher"].includes(currentRole)) return;
-
-  const input = document.getElementById("reminderInput");
-  const value = input.value.trim();
-
-  if (!value) return;
-
-  reminders.push(value);
-  saveData();
-  input.value = "";
-  renderReminders();
-}
-
-
-/* SIMPLE MATHS GAME */
-
-let correctAnswer = 0;
+let numberA = 5;
+let numberB = 3;
+let score = 0;
 
 function newQuestion() {
-  const a = Math.floor(Math.random() * 10) + 1;
-  const b = Math.floor(Math.random() * 10) + 1;
+  numberA = Math.floor(Math.random() * 12) + 1;
+  numberB = Math.floor(Math.random() * 12) + 1;
 
-  correctAnswer = a + b;
+  document.getElementById('mathQuestion').textContent =
+    "What is " + numberA + " + " + numberB + "?";
 
-  document.getElementById("question").textContent =
-    a + " + " + b;
+  document.getElementById('mathAnswer').value = "";
+  document.getElementById('mathMessage').textContent = "";
 }
 
 function checkAnswer() {
-  const answer = Number(document.getElementById("answer").value);
+  const answer = Number(document.getElementById('mathAnswer').value);
+  const message = document.getElementById('mathMessage');
 
-  document.getElementById("gameResult").textContent =
-    answer === correctAnswer
-      ? "🌟 Brilliant! Well done!"
-      : "Have another try!";
+  if (document.getElementById('mathAnswer').value === "") {
+    message.textContent = "Please enter an answer!";
+    return;
+  }
 
-  if (answer === correctAnswer) {
-    document.getElementById("answer").value = "";
+  if (answer === numberA + numberB) {
+    score++;
+    document.getElementById('score').textContent = score;
+    message.textContent = "Well done! Correct answer! 🌟";
     newQuestion();
+  } else {
+    message.textContent = "Not quite! Try again. 😊";
   }
 }
 
+/* ADMIN AREA */
+
+function renderAdmin() {
+  const area = document.getElementById('adminContent');
+
+  if (currentRole !== 'Admin') {
+    area.innerHTML = "<p>Please log in as Admin to use these tools.</p>";
+    return;
+  }
+
+  area.innerHTML = `
+    <h3>Welcome, School Administrator!</h3>
+    <p>You can manage the school's timetable and homework.</p>
+    <button class="action" onclick="showPage('timetable')">Manage timetable</button>
+    <button class="action" onclick="showPage('homework')">Manage homework</button>
+    <h3>School Classes</h3>
+    <ul>
+      ${classNames.map(name => `<li>${escapeHTML(name)}</li>`).join("")}
+    </ul>
+  `;
+}
+
+/* SAFE TEXT DISPLAY */
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[character]);
+}
+
+/* START WEBSITE */
+
+renderTimetable();
+renderHomework();
+updatePermissions();
 newQuestion();
-showHome();
 
 </script>
 
