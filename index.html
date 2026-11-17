@@ -1,12 +1,71 @@
-margin: 15px 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>St Flowers School 🌸</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff5fa;
+  color: #493344;
+}
+
+header {
+  background: #f6c5dc;
+  text-align: center;
+  padding: 22px 15px;
+}
+
+header h1 { margin: 0; font-size: 32px; }
+
+nav {
+  background: #d979a8;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+}
+
+nav button {
+  border: 0;
+  background: white;
+  color: #713653;
+  padding: 10px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 20px;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+h2 { color: #a44877; }
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px 0;
   box-shadow: 0 3px 12px #e8c6d6;
 }
 
 .hero {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
-  height: 350px;
+  border-radius: 16px;
+  height: 320px;
   background: #f4d5e4;
 }
 
@@ -14,7 +73,7 @@ margin: 15px 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.8s;
+  transition: opacity .5s;
 }
 
 .hero-caption {
@@ -24,14 +83,10 @@ margin: 15px 0;
   right: 0;
   padding: 18px;
   color: white;
-  font-size: 22px;
-  font-weight: bold;
   text-align: center;
+  font-size: 21px;
+  font-weight: bold;
   background: linear-gradient(transparent, #0009);
-}
-
-button, input, select, textarea {
-  font: inherit;
 }
 
 .action {
@@ -44,12 +99,10 @@ button, input, select, textarea {
   margin: 4px;
 }
 
-.action:hover {
-  background: #b95789;
-}
+.action:hover { background: #b95789; }
 
 input, select, textarea {
-  padding: 11px;
+  padding: 10px;
   border: 1px solid #d9a9c0;
   border-radius: 8px;
   margin: 5px 0 12px;
@@ -71,37 +124,21 @@ table {
 
 th, td {
   border: 1px solid #edc6d9;
-  padding: 12px 8px;
+  padding: 11px 7px;
   text-align: center;
 }
 
-th {
-  background: #f6c5dc;
-}
+th { background: #f6c5dc; }
 
-.break-row {
-  background: #fff0c9;
-  font-weight: bold;
-}
-
-.lunch-row {
-  background: #e8f4dc;
-  font-weight: bold;
-}
-
-.activity-row {
-  background: #f3e8ff;
-}
-
-.subject {
-  font-weight: bold;
-  color: #a44877;
-}
+.break-row { background: #fff0c9; font-weight: bold; }
+.lunch-row { background: #e8f4dc; font-weight: bold; }
+.activity-row { background: #f3e8ff; }
+.subject { color: #a44877; font-weight: bold; }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
 }
 
 .small-card {
@@ -111,16 +148,36 @@ th {
   text-align: center;
 }
 
-footer {
-  background: #f6c5dc;
-  text-align: center;
-  padding: 20px;
-  margin-top: 35px;
+/* SMALL SCHOOL YEAR GROUP BUTTONS */
+
+.year-groups {
+  display: grid;
+  grid-template-columns: repeat(4, 186px);
+  gap: 8px;
+  max-width: 770px;
 }
 
-#loginMessage {
-  color: #b00040;
-  font-weight: bold;
+.year-groups button {
+  height: 44px;
+  padding: 8px;
+  border: none;
+  border-radius: 13px;
+  font-size: 16px;
+  color: #493344;
+  cursor: pointer;
+}
+
+.year-groups button:nth-child(1) { background: #fbe3eb; }
+.year-groups button:nth-child(2) { background: #fff1c9; }
+.year-groups button:nth-child(3) { background: #d8f3fc; }
+.year-groups button:nth-child(4) { background: #e9def5; }
+.year-groups button:nth-child(5) { background: #dcf3e5; }
+.year-groups button:nth-child(6) { background: #ffdfd2; }
+.year-groups button:nth-child(7) { background: #dfe6ff; }
+
+.year-groups button:hover {
+  filter: brightness(.96);
+  outline: 2px solid #d979a8;
 }
 
 .homework-item {
@@ -128,22 +185,25 @@ footer {
   border-bottom: 1px solid #f0d5e2;
 }
 
-@media(max-width: 650px) {
-  main {
-    padding: 12px;
-  }
+footer {
+  background: #f6c5dc;
+  text-align: center;
+  padding: 20px;
+  margin-top: 35px;
+}
 
-  .hero {
-    height: 230px;
+@media(max-width: 800px) {
+  .year-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
   }
+}
 
-  table {
-    font-size: 12px;
-  }
-
-  th, td {
-    padding: 7px 4px;
-  }
+@media(max-width: 600px) {
+  main { padding: 12px; }
+  .hero { height: 230px; }
+  table { font-size: 12px; }
+  th, td { padding: 7px 4px; }
 }
 </style>
 </head>
@@ -169,7 +229,7 @@ footer {
 
 <main>
 
-<!-- HOME -->
+<!-- HOME PAGE -->
 <section id="home" class="page active">
   <div class="card">
     <h2>Welcome to St Flowers School! 🌸</h2>
@@ -188,39 +248,29 @@ footer {
   <div class="grid">
     <div class="small-card">
       <h3>📚 Learning</h3>
-      <p>We love discovering new things.</p>
+      <p>Discovering new things.</p>
     </div>
     <div class="small-card">
       <h3>⚽ Playing</h3>
-      <p>We enjoy playing with our friends.</p>
+      <p>Having fun with friends.</p>
     </div>
     <div class="small-card">
       <h3>🎨 Creating</h3>
-      <p>We make wonderful things together.</p>
+      <p>Making wonderful things.</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT PAGE -->
 <section id="about" class="page">
   <div class="card">
     <h2>About St Flowers School</h2>
     <p>St Flowers School is a friendly school where everybody is welcome.</p>
     <p>We have classes from Reception to Year 6.</p>
-    <h3>Our Classes</h3>
-    <ul>
-      <li>Reception – Mrs Rose's Class</li>
-      <li>Year 1 – Miss Green's Class</li>
-      <li>Year 2 – Mr Ward's Class</li>
-      <li>Year 3 – Mrs Patel's Class</li>
-      <li>Year 4 – Mr Brown's Class</li>
-      <li>Year 5 – Miss Jones's Class</li>
-      <li>Year 6 – Mrs Smith's Class</li>
-    </ul>
   </div>
 </section>
 
-<!-- LOGIN -->
+<!-- LOGIN PAGE -->
 <section id="login" class="page">
   <div class="card">
     <h2>School Login 🔐</h2>
@@ -253,25 +303,21 @@ footer {
     <div class="grid">
       <div class="small-card">
         <h3>📅 Timetable</h3>
-        <p>See what lessons are happening today.</p>
         <button class="action" onclick="showPage('timetable')">View timetable</button>
       </div>
 
       <div class="small-card">
         <h3>📖 Homework</h3>
-        <p>Check your homework.</p>
         <button class="action" onclick="showPage('homework')">View homework</button>
       </div>
 
       <div class="small-card">
         <h3>🔔 Reminders</h3>
-        <p>Remember important school events.</p>
         <button class="action" onclick="showPage('reminders')">View reminders</button>
       </div>
 
       <div class="small-card">
         <h3>🧮 Maths Games</h3>
-        <p>Practise your maths.</p>
         <button class="action" onclick="showPage('games')">Play games</button>
       </div>
     </div>
@@ -284,17 +330,17 @@ footer {
 <section id="timetable" class="page">
   <div class="card">
     <h2>📅 School Timetable</h2>
-    <p>Our school day starts at 9:00 am and finishes at 3:15 pm.</p>
+    <p>School starts at 9:00 am and finishes at 3:15 pm.</p>
 
     <label>Choose a class</label>
     <select id="classChoice" onchange="renderTimetable()">
-      <option>Reception – Mrs Rose's Class</option>
-      <option>Year 1 – Miss Green's Class</option>
-      <option>Year 2 – Mr Ward's Class</option>
-      <option>Year 3 – Mrs Patel's Class</option>
-      <option>Year 4 – Mr Brown's Class</option>
-      <option>Year 5 – Miss Jones's Class</option>
-      <option>Year 6 – Mrs Smith's Class</option>
+      <option>Year R</option>
+      <option>Year 1</option>
+      <option>Year 2</option>
+      <option>Year 3</option>
+      <option>Year 4</option>
+      <option>Year 5</option>
+      <option>Year 6</option>
     </select>
 
     <div style="overflow-x:auto">
@@ -314,8 +360,7 @@ footer {
     </div>
 
     <div id="timetableEditor" style="display:none">
-      <h3>Edit timetable (Admin and Teachers)</h3>
-      <p>Choose a day and lesson to change its subject.</p>
+      <h3>Edit timetable</h3>
 
       <label>Day</label>
       <select id="editDay">
@@ -340,8 +385,6 @@ footer {
 
       <button class="action" onclick="saveLesson()">Save lesson</button>
     </div>
-
-    <p><strong>Home time: 3:15 pm 🌸</strong></p>
   </div>
 </section>
 
@@ -349,16 +392,15 @@ footer {
 <section id="homework" class="page">
   <div class="card">
     <h2>📖 Homework</h2>
-    <p>Here is the school's homework list.</p>
-
     <div id="homeworkList"></div>
 
     <div id="homeworkEditor" style="display:none">
       <h3>Add homework</h3>
+
       <label>Class</label>
       <select id="homeworkClass">
         <option>All classes</option>
-        <option>Reception</option>
+        <option>Year R</option>
         <option>Year 1</option>
         <option>Year 2</option>
         <option>Year 3</option>
@@ -368,7 +410,7 @@ footer {
       </select>
 
       <label>Homework details</label>
-      <textarea id="homeworkText" rows="3" placeholder="Write the homework here"></textarea>
+      <textarea id="homeworkText" rows="3" placeholder="Write homework here"></textarea>
 
       <button class="action" onclick="addHomework()">Add homework</button>
     </div>
@@ -379,7 +421,7 @@ footer {
 <section id="reminders" class="page">
   <div class="card">
     <h2>🔔 School Reminders</h2>
-    <ul id="reminderList">
+    <ul>
       <li>Remember to bring your reading book.</li>
       <li>Bring your PE kit on PE days.</li>
       <li>Be kind and helpful to everyone.</li>
@@ -388,15 +430,15 @@ footer {
   </div>
 </section>
 
-<!-- GAMES -->
+<!-- MATHS GAMES -->
 <section id="games" class="page">
   <div class="card">
     <h2>🧮 Maths Challenge</h2>
     <p>Answer the question below!</p>
 
     <h3 id="mathQuestion">What is 5 + 3?</h3>
-
     <input id="mathAnswer" type="number" placeholder="Your answer">
+
     <button class="action" onclick="checkAnswer()">Check answer</button>
     <button class="action" onclick="newQuestion()">New question</button>
 
@@ -405,11 +447,10 @@ footer {
   </div>
 </section>
 
-<!-- ADMIN -->
+<!-- ADMIN PAGE -->
 <section id="admin" class="page">
   <div class="card">
     <h2>⚙️ Admin Area</h2>
-    <p>School administration tools.</p>
 
     <div id="adminContent">
       <p>Please log in as Admin to use these tools.</p>
@@ -425,6 +466,7 @@ footer {
 </footer>
 
 <script>
+
 /* PAGE NAVIGATION */
 
 function showPage(pageId) {
@@ -439,7 +481,7 @@ function showPage(pageId) {
   if (pageId === 'admin') renderAdmin();
 }
 
-/* CHILDREN'S SLIDESHOW */
+/* SLIDESHOW */
 
 const slides = [
   {
@@ -462,13 +504,12 @@ setInterval(() => {
   slideIndex = (slideIndex + 1) % slides.length;
 
   const image = document.getElementById('slideshowImage');
-  const caption = document.getElementById('slideCaption');
-
   image.style.opacity = 0;
 
   setTimeout(() => {
     image.src = slides[slideIndex].image;
-    caption.textContent = slides[slideIndex].caption;
+    document.getElementById('slideCaption').textContent =
+      slides[slideIndex].caption;
     image.style.opacity = 1;
   }, 400);
 }, 5000);
@@ -482,10 +523,10 @@ function login() {
   const username = document.getElementById('username').value.trim();
   const password = document.getElementById('password').value;
   const role = document.getElementById('role').value;
-  const message = document.getElementById('loginMessage');
 
   if (!username || !password) {
-    message.textContent = "Please enter your username and password.";
+    document.getElementById('loginMessage').textContent =
+      "Please enter your username and password.";
     return;
   }
 
@@ -495,10 +536,10 @@ function login() {
   document.getElementById('welcomeMessage').textContent =
     "Welcome, " + username + "! You are logged in as " + role + ".";
 
-  message.textContent = "Demo login successful!";
+  document.getElementById('loginMessage').textContent = "Demo login successful!";
 
-  showPage('dashboard');
   updatePermissions();
+  showPage('dashboard');
 }
 
 function logout() {
@@ -509,27 +550,25 @@ function logout() {
 }
 
 function updatePermissions() {
-  const editor = document.getElementById('timetableEditor');
-  const homeworkEditor = document.getElementById('homeworkEditor');
+  const staff = currentRole === 'Admin' || currentRole === 'Teacher';
 
-  editor.style.display =
-    (currentRole === 'Admin' || currentRole === 'Teacher') ? 'block' : 'none';
+  document.getElementById('timetableEditor').style.display =
+    staff ? 'block' : 'none';
 
-  homeworkEditor.style.display =
-    (currentRole === 'Admin' || currentRole === 'Teacher') ? 'block' : 'none';
+  document.getElementById('homeworkEditor').style.display =
+    staff ? 'block' : 'none';
 }
 
-/* TIMETABLE DATA */
+/* YEAR GROUP BUTTONS */
+
+function chooseYear(year) {
+  document.getElementById('classChoice').value = year;
+  showPage('timetable');
+}
+
+/* TIMETABLE */
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-
-const times = [
-  "9:00–9:45",
-  "9:45–10:30",
-  "10:45–11:30",
-  "12:30–1:15",
-  "1:15–2:15"
-];
 
 const defaultLessons = [
   ["Maths", "English", "Science", "Art", "PE"],
@@ -541,63 +580,52 @@ const defaultLessons = [
 
 let timetableData = {};
 
-const classNames = [
-  "Reception – Mrs Rose's Class",
-  "Year 1 – Miss Green's Class",
-  "Year 2 – Mr Ward's Class",
-  "Year 3 – Mrs Patel's Class",
-  "Year 4 – Mr Brown's Class",
-  "Year 5 – Miss Jones's Class",
-  "Year 6 – Mrs Smith's Class"
-];
+const years = ["Year R", "Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6"];
 
-classNames.forEach(className => {
-  timetableData[className] = {};
-
-  days.forEach(day => {
-    timetableData[className][day] = [...defaultLessons[days.indexOf(day)]];
+years.forEach(year => {
+  timetableData[year] = {};
+  days.forEach((day, index) => {
+    timetableData[year][day] = [...defaultLessons[index]];
   });
 });
 
+const timetableRows = [
+  {time: "9:00–9:45", type: "lesson", index: 0},
+  {time: "9:45–10:30", type: "lesson", index: 1},
+  {time: "10:30–10:45", type: "break"},
+  {time: "10:45–11:30", type: "lesson", index: 2},
+  {time: "11:30–12:30", type: "lunch"},
+  {time: "12:30–1:15", type: "lesson", index: 3},
+  {time: "1:15–2:15", type: "lesson", index: 4},
+  {time: "2:15–3:15", type: "activities"}
+];
+
 function renderTimetable() {
-  const selectedClass = document.getElementById('classChoice').value;
+  const selectedYear = document.getElementById('classChoice').value;
   const body = document.getElementById('timetableBody');
 
   let html = "";
 
-  const rows = [
-    {time: "9:00–9:45", type: "lesson", index: 0},
-    {time: "9:45–10:30", type: "lesson", index: 1},
-    {time: "10:30–10:45", type: "break"},
-    {time: "10:45–11:30", type: "lesson", index: 2},
-    {time: "11:30–12:30", type: "lunch"},
-    {time: "12:30–1:15", type: "lesson", index: 3},
-    {time: "1:15–2:15", type: "lesson", index: 4},
-    {time: "2:15–3:15", type: "activities"}
-  ];
-
-  rows.forEach(row => {
+  timetableRows.forEach(row => {
     if (row.type === "break") {
       html += `<tr class="break-row">
-        <td>${row.time}</td>
-        <td colspan="5">☀️ Morning Break</td>
+        <td>${row.time}</td><td colspan="5">☀️ Morning Break</td>
       </tr>`;
     } else if (row.type === "lunch") {
       html += `<tr class="lunch-row">
-        <td>${row.time}</td>
-        <td colspan="5">🍎 Lunch Time</td>
+        <td>${row.time}</td><td colspan="5">🍎 Lunch Time</td>
       </tr>`;
     } else if (row.type === "activities") {
       html += `<tr class="activity-row">
-        <td>${row.time}</td>
-        <td colspan="5">🎨 Afternoon Activities</td>
+        <td>${row.time}</td><td colspan="5">🎨 Afternoon Activities</td>
       </tr>`;
     } else {
       html += `<tr><td>${row.time}</td>`;
 
       days.forEach(day => {
-        const subject = timetableData[selectedClass][day][row.index];
-        html += `<td class="subject">${escapeHTML(subject)}</td>`;
+        html += `<td class="subject">${escapeHTML(
+          timetableData[selectedYear][day][row.index]
+        )}</td>`;
       });
 
       html += `</tr>`;
@@ -605,8 +633,7 @@ function renderTimetable() {
   });
 
   html += `<tr class="activity-row">
-    <td>3:15 pm</td>
-    <td colspan="5">🏡 Home Time!</td>
+    <td>3:15 pm</td><td colspan="5">🏡 Home Time!</td>
   </tr>`;
 
   body.innerHTML = html;
@@ -618,7 +645,7 @@ function saveLesson() {
     return;
   }
 
-  const selectedClass = document.getElementById('classChoice').value;
+  const year = document.getElementById('classChoice').value;
   const day = document.getElementById('editDay').value;
   const lesson = Number(document.getElementById('editLesson').value);
   const subject = document.getElementById('newSubject').value.trim();
@@ -628,8 +655,7 @@ function saveLesson() {
     return;
   }
 
-  timetableData[selectedClass][day][lesson] = subject;
-
+  timetableData[year][day][lesson] = subject;
   document.getElementById('newSubject').value = "";
   renderTimetable();
 
@@ -646,7 +672,6 @@ let homework = [
 
 function renderHomework() {
   const list = document.getElementById('homeworkList');
-
   list.innerHTML = "";
 
   homework.forEach(item => {
@@ -677,7 +702,6 @@ function addHomework() {
   }
 
   homework.push({className, text});
-
   document.getElementById('homeworkText').value = "";
   renderHomework();
 
@@ -702,15 +726,15 @@ function newQuestion() {
 }
 
 function checkAnswer() {
-  const answer = Number(document.getElementById('mathAnswer').value);
+  const field = document.getElementById('mathAnswer');
   const message = document.getElementById('mathMessage');
 
-  if (document.getElementById('mathAnswer').value === "") {
+  if (field.value === "") {
     message.textContent = "Please enter an answer!";
     return;
   }
 
-  if (answer === numberA + numberB) {
+  if (Number(field.value) === numberA + numberB) {
     score++;
     document.getElementById('score').textContent = score;
     message.textContent = "Well done! Correct answer! 🌟";
@@ -731,18 +755,27 @@ function renderAdmin() {
   }
 
   area.innerHTML = `
-    <h3>Welcome, School Administrator!</h3>
-    <p>You can manage the school's timetable and homework.</p>
-    <button class="action" onclick="showPage('timetable')">Manage timetable</button>
+    <h3>School year groups</h3>
+
+    <div class="year-groups">
+      <button onclick="chooseYear('Year R')">Year R 🌷</button>
+      <button onclick="chooseYear('Year 1')">Year 1 🌈</button>
+      <button onclick="chooseYear('Year 2')">Year 2 ⭐</button>
+      <button onclick="chooseYear('Year 3')">Year 3 🎨</button>
+      <button onclick="chooseYear('Year 4')">Year 4 🚀</button>
+      <button onclick="chooseYear('Year 5')">Year 5 🦋</button>
+      <button onclick="chooseYear('Year 6')">Year 6 🏆</button>
+    </div>
+
+    <h3 style="margin-top:28px">How the Admin timetable will work</h3>
+    <p>Choose a year group above to open its timetable. Admin can change the lessons for each day.</p>
+
+    <button class="action" onclick="showPage('timetable')">Open timetable editor</button>
     <button class="action" onclick="showPage('homework')">Manage homework</button>
-    <h3>School Classes</h3>
-    <ul>
-      ${classNames.map(name => `<li>${escapeHTML(name)}</li>`).join("")}
-    </ul>
   `;
 }
 
-/* SAFE TEXT DISPLAY */
+/* TEXT SAFETY */
 
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, character => ({
@@ -754,7 +787,7 @@ function escapeHTML(value) {
   })[character]);
 }
 
-/* START WEBSITE */
+/* START */
 
 renderTimetable();
 renderHomework();
